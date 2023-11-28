@@ -9,26 +9,26 @@
 
     <string-array name="old_build">
         <item>Casa Loma</item>
-        <item>old1</item>
-        <item>old2</item>
-        <item>old3</item>
+        <item>Gooderham Building</item>
+        <item>The Beardmore Building</item>
+        <item>George Brown House</item>
     </string-array>
     <string-array name="museums">
-        <item>M0</item>
-        <item>M1</item>
-        <item>M2</item>
-        <item>M3</item>
+        <item>Royal Ontario Museum</item>
+        <item>Gardiner Museum</item>
+        <item>Textile Museum of Canada</item>
+        <item>Aga Khan Museum</item>
     </string-array>
     <string-array name="stadiums">
-        <item>s0</item>
-        <item>s1</item>
-        <item>s2</item>
-        <item>s3</item>
+        <item>BMO field</item>
+        <item>Rogers Centre</item>
+        <item>Varsity Centre</item>
+        <item>Brockton Stadium</item>
     </string-array>
     <string-array name="attractions">
-        <item>a0</item>
-        <item>a1</item>
-        <item>a2</item>
-        <item>a3</item>
+        <item>CN Tower</item>
+        <item>High Park</item>
+        <item>Harbour Front</item>
+        <item>Toronto Island</item>
     </string-array>
 </resources>
