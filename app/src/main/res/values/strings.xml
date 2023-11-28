@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">comp304_group4_lab5</string>
+    <string-array name="types">
+        <item>Old Buildings</item>
+        <item>Museums</item>
+        <item>Stadiums</item>
+        <item>Attractions</item>
+    </string-array>
+
+    <string-array name="old_build">
+        <item>Casa Loma</item>
+        <item>old1</item>
+        <item>old2</item>
+        <item>old3</item>
+    </string-array>
+    <string-array name="museums">
+        <item>M0</item>
+        <item>M1</item>
+        <item>M2</item>
+        <item>M3</item>
+    </string-array>
+    <string-array name="stadiums">
+        <item>s0</item>
+        <item>s1</item>
+        <item>s2</item>
+        <item>s3</item>
+    </string-array>
+    <string-array name="attractions">
+        <item>a0</item>
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+    </string-array>
+</resources>
