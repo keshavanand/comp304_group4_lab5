@@ -11,7 +11,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import androidx.recyclerview.widget.RecyclerView
 
-class landmarkAdapter(private val context: Context,private val landmarks: Array<String>): RecyclerView.Adapter<landmarkAdapter.LandmarkViewHolder>() {
+class landmarkAdapter(private val context: Context,private val landmarks: Array<String>, private val onClickListener: OnItemClickListener)
+    : RecyclerView.Adapter<landmarkAdapter.LandmarkViewHolder>() {
 
     class LandmarkViewHolder(itemVew : View) : RecyclerView.ViewHolder(itemVew){
         var landmark: TextView = itemVew.findViewById(R.id.landmark)
@@ -27,11 +28,15 @@ class landmarkAdapter(private val context: Context,private val landmarks: Array<
         holder.landmark.text = currentItem
 
         holder.landmark.setOnClickListener{
-            Toast.makeText(context,"Working", Toast.LENGTH_SHORT).show()
+            onClickListener.onItemClick(currentItem)
         }
     }
 
     override fun getItemCount(): Int {
         return landmarks.size
+    }
+
+    class OnItemClickListener(val clickListener: (item: String) -> Unit) {
+        fun onItemClick(item: String) = clickListener(item)
     }
 }

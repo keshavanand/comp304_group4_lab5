@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+const val EXTRA_LANDMARK_TYPE = "com.comp304_group4_lab5.LANDMARK_TYPE"
+const val EXTRA_LANDMARK = "com.comp304_group4_lab5.LANDMARK"
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var recyclerView: RecyclerView;

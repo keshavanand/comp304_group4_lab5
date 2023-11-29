@@ -1,5 +1,6 @@
 package com.comp304_group4_lab5
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -31,7 +32,11 @@ class landmarks : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
-        recyclerView.adapter = landmarkAdapter(this,landmark)
+        recyclerView.adapter = landmarkAdapter(this,landmark, landmarkAdapter.OnItemClickListener{onItemClick(it)})
 
+    }
+    private fun onItemClick(item: String) {
+        val intent = Intent(this, MapActivity::class.java)
+        startActivity(intent)
     }
 }
