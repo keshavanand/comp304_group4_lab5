@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">comp304_group4_lab5</string>
+    <string name="app_name">Explore Toronto</string>
     <string-array name="types">
         <item>Old Buildings</item>
         <item>Museums</item>
