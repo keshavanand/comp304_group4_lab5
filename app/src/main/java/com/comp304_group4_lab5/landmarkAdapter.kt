@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class landmarkAdapter(private val context: Context,private val landmarks: Array<String>,private val address: Array<String>)
     : RecyclerView.Adapter<landmarkAdapter.LandmarkViewHolder>() {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     class LandmarkViewHolder(itemVew : View) : RecyclerView.ViewHolder(itemVew){
         var landmark: TextView = itemVew.findViewById(R.id.landmarkName)
