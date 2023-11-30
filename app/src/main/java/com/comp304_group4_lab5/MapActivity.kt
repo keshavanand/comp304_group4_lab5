@@ -3,6 +3,7 @@ package com.comp304_group4_lab5
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -52,7 +53,7 @@ class MapActivity : AppCompatActivity() , OnMapReadyCallback{
                 // create marker and zoom to that location
                 val location = LatLng(bestMatch.latitude, bestMatch.longitude)
                 mMap.addMarker(MarkerOptions().position(location).title(landmarkName))
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 20f))
 
             }
         } catch (e: IOException) {
@@ -63,6 +64,7 @@ class MapActivity : AppCompatActivity() , OnMapReadyCallback{
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.options, menu)
+        Log.d("OptionsMenu", "Menu created") //debug for option menu
         return true
     }
 
