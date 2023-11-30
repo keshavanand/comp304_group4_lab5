@@ -11,11 +11,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import androidx.recyclerview.widget.RecyclerView
 
-class landmarkAdapter(private val context: Context,private val landmarks: Array<String>, private val onClickListener: OnItemClickListener)
+class landmarkAdapter(private val context: Context,private val landmarks: Array<String>,private val address: Array<String>)
     : RecyclerView.Adapter<landmarkAdapter.LandmarkViewHolder>() {
 
     class LandmarkViewHolder(itemVew : View) : RecyclerView.ViewHolder(itemVew){
-        var landmark: TextView = itemVew.findViewById(R.id.landmark)
+        var landmark: TextView = itemVew.findViewById(R.id.landmarkName)
+        var address: TextView = itemVew.findViewById(R.id.landmarkAddress)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): landmarkAdapter.LandmarkViewHolder {
@@ -25,10 +26,14 @@ class landmarkAdapter(private val context: Context,private val landmarks: Array<
 
     override fun onBindViewHolder(holder: landmarkAdapter.LandmarkViewHolder, position: Int) {
         val currentItem = landmarks[position]
+        val currentIemAddress = address[position]
         holder.landmark.text = currentItem
+        holder.address.text = currentIemAddress
 
         holder.landmark.setOnClickListener{
-            onClickListener.onItemClick(currentItem)
+            val intent = Intent(context, MapActivity::class.java)
+            intent.putExtra("EXTRA_LANDMARK",currentItem)
+            context.startActivity(intent)
         }
     }
 
@@ -36,7 +41,5 @@ class landmarkAdapter(private val context: Context,private val landmarks: Array<
         return landmarks.size
     }
 
-    class OnItemClickListener(val clickListener: (item: String) -> Unit) {
-        fun onItemClick(item: String) = clickListener(item)
-    }
+
 }

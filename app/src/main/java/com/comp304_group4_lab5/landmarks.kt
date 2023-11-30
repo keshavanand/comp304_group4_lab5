@@ -26,13 +26,23 @@ class landmarks : AppCompatActivity() {
             else -> R.array.old_build
         }
 
+        val landmarkAddressID = when (type) {
+            "Old Buildings" -> R.array.old_buildAddress
+            "Museums" -> R.array.museumsAddress
+            "Stadiums" -> R.array.stadiumsAddress
+            "Attractions" -> R.array.attractionsAddress
+            // Add more cases as needed for other types
+            else -> R.array.old_buildAddress
+        }
+
         val landmark =resources.getStringArray(landmarkID)
+        val address = resources.getStringArray(landmarkAddressID)
 
         recyclerView = findViewById(R.id.LandmarkrecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
-        recyclerView.adapter = landmarkAdapter(this,landmark, landmarkAdapter.OnItemClickListener{onItemClick(it)})
+        recyclerView.adapter = landmarkAdapter(this,landmark,address)
 
     }
     private fun onItemClick(item: String) {

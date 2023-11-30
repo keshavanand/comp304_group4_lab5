@@ -23,7 +23,7 @@ class MapActivity : AppCompatActivity() , OnMapReadyCallback{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
 
-        val landmark = intent.getStringExtra(EXTRA_LANDMARK)
+        val landmark = intent.getStringExtra("EXTRA_LANDMARK")
         landmarkName = landmark.toString()
 
         val mapFragment = supportFragmentManager
