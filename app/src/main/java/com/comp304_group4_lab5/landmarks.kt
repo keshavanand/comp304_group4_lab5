@@ -1,9 +1,8 @@
 package com.comp304_group4_lab5
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,7 +14,6 @@ class landmarks : AppCompatActivity() {
         setContentView(R.layout.activity_landmarks)
 
         val type = intent.getStringExtra("type")
-
 
         val landmarkID = when (type) {
             "Old Buildings" -> R.array.old_build

@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import androidx.recyclerview.widget.RecyclerView
 
 class LandTypesAdapter(private val context: Context,private val landmarkTypes: Array<String>): RecyclerView.Adapter<LandTypesAdapter.LandTypesViewHolder>() {

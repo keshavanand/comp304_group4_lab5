@@ -6,14 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import androidx.recyclerview.widget.RecyclerView
 
 class landmarkAdapter(private val context: Context,private val landmarks: Array<String>,private val address: Array<String>)
     : RecyclerView.Adapter<landmarkAdapter.LandmarkViewHolder>() {
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     class LandmarkViewHolder(itemVew : View) : RecyclerView.ViewHolder(itemVew){
         var landmark: TextView = itemVew.findViewById(R.id.landmarkName)
@@ -27,13 +23,14 @@ class landmarkAdapter(private val context: Context,private val landmarks: Array<
 
     override fun onBindViewHolder(holder: landmarkAdapter.LandmarkViewHolder, position: Int) {
         val currentItem = landmarks[position]
-        val currentIemAddress = address[position]
+        val currentItemAddress = address[position]
         holder.landmark.text = currentItem
-        holder.address.text = currentIemAddress
+        holder.address.text = currentItemAddress
 
         holder.landmark.setOnClickListener{
             val intent = Intent(context, MapActivity::class.java)
             intent.putExtra("EXTRA_LANDMARK",currentItem)
+            intent.putExtra("EXTRA_ADDRESS",currentItemAddress)
             context.startActivity(intent)
         }
     }

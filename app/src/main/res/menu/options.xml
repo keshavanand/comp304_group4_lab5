@@ -2,5 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="Default" android:id="@+id/default_map"/>
     <item android:title="Satellite" android:id="@+id/satellite_map"/>
+    <item android:title="Home" android:id="@+id/home"/>
 
 </menu>
